@@ -7,13 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class InventarioPage extends BasePage{
+public class ProdutoPage extends BasePage{
 
-	public InventarioPage(WebDriver navegador) {
+	public ProdutoPage(WebDriver navegador) {
 		super(navegador);
 	}
 
-	public InventarioPage setEscolherUmProdutoAleatorio(){
+	public void setEscolherUmProdutoAleatorio(){
 		Random escolhido = new Random();
 		
 		List<WebElement> elements = navegador.findElements(By.xpath("//button[@class=\"btn btn_primary btn_small btn_inventory\"]"));
@@ -24,14 +24,12 @@ public class InventarioPage extends BasePage{
 			
 		//escolhendo um produto de forma aleatória
 		elements.get(escolhido.nextInt(elements.size())).click();
-		
-		return this;
+	
 	}
 	
-	public CartPage setClicarCarrinho(){
+	public void setClicarCarrinho(){
 		navegador.findElement(By.id("shopping_cart_container")).click();
-		
-		return new CartPage(navegador);
+
 	}
 	
 	

@@ -7,5 +7,6 @@ public class BasePage {
 	
 	public BasePage(WebDriver navegador){
 		this.navegador = navegador;
+
 	}
 }
