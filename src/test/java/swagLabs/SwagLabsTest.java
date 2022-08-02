@@ -22,6 +22,8 @@ public class SwagLabsTest {
 	
 	WebDriver navegador;
 	
+	String username = System.getenv("USERNAME");
+	
 	@Before
 	public void iniciar() {		
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromeDriver/chromedriver.exe");
@@ -40,7 +42,9 @@ public class SwagLabsTest {
 		ResumoPedidoPage resumoPedido = new ResumoPedidoPage(navegador);
 		PedidoCompletoPage pedidoCompleto = new PedidoCompletoPage(navegador);
 		
-		loginPage.setUsuario("standard_user");
+		
+		//loginPage.setUsuario("standard_user");
+		loginPage.setUsuario(username);
 		loginPage.setSenha("secret_sauce");
 		loginPage.setClicarLogin();	
 		
