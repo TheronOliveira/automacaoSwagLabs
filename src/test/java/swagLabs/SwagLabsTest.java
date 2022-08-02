@@ -1,6 +1,7 @@
 package swagLabs;
 
 import java.io.IOException;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,25 +18,21 @@ import swagLabs.pages.ResumoPedidoPage;
 import swagLabs.pages.ScreenShot;
 
 
+
+
 public class SwagLabsTest {
 	
 	WebDriver navegador;
 	
 	@Before
-	public void iniciar(){		
+	public void iniciar() {		
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromeDriver/chromedriver.exe");
 		navegador = new ChromeDriver();
 		navegador.manage().window().maximize();
 		navegador.get("https://www.saucedemo.com/");
 	}
-	
-	@After
-	public void finalizar(){
-		navegador.quit();
-	}
-	
+		
 	@Test
-	//todo método de test tem que ser publico (public) e sem retorno (void)
 	public void testOrdemPedidoRealizadacomSucesso() throws IOException{
 		
 		LoginPage loginPage = new LoginPage(navegador);
@@ -65,21 +62,11 @@ public class SwagLabsTest {
 		
 		ScreenShot.tirarFoto(navegador);
 		
-		/*
-		String mensagemFinal = loginPage
-		.createChrome()
-		.setRealizarlogin("standard_user", )
-		.setEscolherUmProdutoAleatorio()
-		.setClicarCarrinho()
-		.setCheckoutResumoCompra()
-		.setCheckoutInformacoesUsuario("teste", "001", "09020000")
-		.setClicarFinish()
-		.getMensagemOrdemComprada();
-		
-		Assert.assertEquals("THANK YOU FOR YOUR ORDER",mensagemFinal);
-		//ScreenShot.tirarFoto();*/
-
-		//loginPage.setSair();
-		
+	}
+	
+	@After
+	public void finalizar() {
+		navegador.close();
+		navegador.quit();
 	}
 }
