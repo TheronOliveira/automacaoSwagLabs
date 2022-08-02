@@ -18,8 +18,6 @@ import swagLabs.pages.ResumoPedidoPage;
 import swagLabs.pages.ScreenShot;
 
 
-
-
 public class SwagLabsTest {
 	
 	WebDriver navegador;
