@@ -23,7 +23,7 @@ public class SwagLabsTest {
 	WebDriver navegador;
 	
 	String USERNAME = System.getenv("USERNAME");
-	String PASSWORD = System.getenv("USERNAME");
+	String PASSWORD = System.getenv("PASSWORD");
 	
 	@Before
 	public void iniciar() {		
@@ -61,8 +61,7 @@ public class SwagLabsTest {
 		
 		Assert.assertEquals("THANK YOU FOR YOUR ORDER", pedidoCompleto.getMensagemOrdemComprada());
 		
-		ScreenShot.tirarFoto(navegador);
-		
+		ScreenShot.tirarFoto(navegador);		
 	}
 	
 	@After
