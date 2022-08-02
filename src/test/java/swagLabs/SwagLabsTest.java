@@ -22,7 +22,8 @@ public class SwagLabsTest {
 	
 	WebDriver navegador;
 	
-	String username = System.getenv("USERNAME");
+	String USERNAME = System.getenv("USERNAME");
+	String PASSWORD = System.getenv("USERNAME");
 	
 	@Before
 	public void iniciar() {		
@@ -42,10 +43,8 @@ public class SwagLabsTest {
 		ResumoPedidoPage resumoPedido = new ResumoPedidoPage(navegador);
 		PedidoCompletoPage pedidoCompleto = new PedidoCompletoPage(navegador);
 		
-		
-		//loginPage.setUsuario("standard_user");
-		loginPage.setUsuario(username);
-		loginPage.setSenha("secret_sauce");
+		loginPage.setUsuario(USERNAME);
+		loginPage.setSenha(PASSWORD);
 		loginPage.setClicarLogin();	
 		
 		produto.setEscolherUmProdutoAleatorio();
