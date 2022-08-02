@@ -23,7 +23,7 @@ public class SwagLabsTest {
 	
 	@Before
 	public void iniciar(){		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\SempreIT\\Documents\\Testes de Software\\chrome-driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromeDriver/chromedriver.exe");
 		navegador = new ChromeDriver();
 		navegador.manage().window().maximize();
 		navegador.get("https://www.saucedemo.com/");
