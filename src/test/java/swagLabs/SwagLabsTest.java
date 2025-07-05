@@ -2,6 +2,7 @@ package swagLabs;
 
 import java.io.IOException;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,9 +28,14 @@ public class SwagLabsTest {
 	
 	@Before
 	public void iniciar() {		
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromeDriver/chromedriver.exe");
+		navegador = WebDriverManager.chromedriver().create();
 		navegador = new ChromeDriver();
 		navegador.manage().window().maximize();
+		navegador.get("https://www.saucedemo.com/");
+	}
+
+	@Test
+	public void testAcessoAPaginaSauceDemo(){
 		navegador.get("https://www.saucedemo.com/");
 	}
 		
